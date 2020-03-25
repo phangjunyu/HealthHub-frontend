@@ -1,10 +1,11 @@
 import { createStackNavigator } from "react-navigation-stack"
-import { WelcomeScreen, DemoScreen } from "../screens"
+import { WelcomeScreen, DemoScreen, HomepageScreen } from "../screens"
 
 export const PrimaryNavigator = createStackNavigator(
   {
     welcome: { screen: WelcomeScreen },
     demo: { screen: DemoScreen },
+    homepage: { screen: HomepageScreen },
   },
   {
     headerMode: "none",

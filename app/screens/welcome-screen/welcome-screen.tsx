@@ -1,78 +1,11 @@
 import * as React from "react"
-import { View, Image, ViewStyle, TextStyle, ImageStyle, SafeAreaView } from "react-native"
+import { View, Image, SafeAreaView, ViewStyle } from "react-native"
 import { NavigationInjectedProps } from "react-navigation"
 import { Button, Header, Screen, Text, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
-const bowserLogo = require("./bowser.png")
-
-const FULL: ViewStyle = { flex: 1 }
-const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
-  paddingHorizontal: spacing[4],
-}
-const TEXT: TextStyle = {
-  color: color.palette.white,
-  fontFamily: "Montserrat",
-}
-const BOLD: TextStyle = { fontWeight: "bold" }
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[4] + spacing[1],
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: "center",
-  letterSpacing: 1.5,
-}
-const TITLE_WRAPPER: TextStyle = {
-  ...TEXT,
-  textAlign: "center",
-}
-const TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 28,
-  lineHeight: 38,
-  textAlign: "center",
-}
-const ALMOST: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 26,
-  fontStyle: "italic",
-}
-const BOWSER: ImageStyle = {
-  alignSelf: "center",
-  marginVertical: spacing[5],
-  maxWidth: "100%",
-}
-const CONTENT: TextStyle = {
-  ...TEXT,
-  color: "#BAB6C8",
-  fontSize: 15,
-  lineHeight: 22,
-  marginBottom: spacing[5],
-}
-const CONTINUE: ViewStyle = {
-  paddingVertical: spacing[4],
-  paddingHorizontal: spacing[4],
-  backgroundColor: "#5D2555",
-}
-const CONTINUE_TEXT: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 13,
-  letterSpacing: 2,
-}
-const FOOTER: ViewStyle = { backgroundColor: "#20162D" }
-const FOOTER_CONTENT: ViewStyle = {
-  paddingVertical: spacing[4],
-  paddingHorizontal: spacing[4],
-}
+import styles from "../../theme/styles"
+// const bowserLogo = require("./bowser.png")
+const healthhubLogo = require("./Healthhub.png")
 
 export interface WelcomeScreenProps extends NavigationInjectedProps<{}> {}
 
@@ -80,37 +13,62 @@ export const WelcomeScreen: React.FunctionComponent<WelcomeScreenProps> = props 
   const nextScreen = React.useMemo(() => () => props.navigation.navigate("demo"), [
     props.navigation,
   ])
+  const loadHomePage = React.useMemo(() => () => props.navigation.navigate("homepage"), [
+    props.navigation,
+  ])
+
+  const CONTAINER: ViewStyle = {
+    backgroundColor: color.transparent,
+    paddingHorizontal: spacing[4],
+    alignContent: "center",
+    justifyContent: "center",
+  }
 
   return (
-    <View style={FULL}>
+    <View style={styles.FULL}>
       <Wallpaper />
-      <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-        <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
-        <Text style={TITLE_WRAPPER}>
-          <Text style={TITLE} text="Your new app, " />
-          <Text style={ALMOST} text="almost" />
-          <Text style={TITLE} text="!" />
-        </Text>
-        <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
-        <Image source={bowserLogo} style={BOWSER} />
-        <Text style={CONTENT}>
+      <Screen style={CONTAINER} backgroundColor={color.transparent}>
+        {/* <Header
+          headerTx="welcomeScreen.poweredBy"
+          style={Styles.HEADER}
+          titleStyle={Styles.HEADER_TITLE}
+        /> */}
+        {/* <Text style={Styles.TITLE_WRAPPER}>
+          <Text style={Styles.TITLE} text="Your new app, " />
+          <Text style={Styles.ALMOST} text="almost" />
+          <Text style={Styles.TITLE} text="!" />
+        </Text> */}
+        {/* <Text style={Styles.TITLE} preset="header" tx="welcomeScreen.readyForLaunch" /> */}
+        {/* <Image source={bowserLogo} style={Styles.BOWSER} /> */}
+        <Image source={healthhubLogo} style={styles.BOWSER} resizeMode="contain" />
+        {/* <Text style={Styles.CONTENT}>
           This probably isn't what your app is going to look like. Unless your designer handed you
           this screen and, in that case, congrats! You're ready to ship.
         </Text>
-        <Text style={CONTENT}>
+        <Text style={Styles.CONTENT}>
           For everyone else, this is where you'll see a live preview of your fully functioning app
           using Ignite.
-        </Text>
+        </Text> */}
       </Screen>
-      <SafeAreaView style={FOOTER}>
-        <View style={FOOTER_CONTENT}>
+      <SafeAreaView style={styles.FOOTER}>
+        <View style={styles.FOOTER_CONTENT}>
           <Button
-            style={CONTINUE}
-            textStyle={CONTINUE_TEXT}
+            style={styles.CONTINUE}
+            textStyle={styles.CONTINUE_TEXT}
+            text="Login"
+            // tx="welcomeScreen.continue"
+            onPress={loadHomePage}
+          />
+        </View>
+        {/* <View style={Styles.FOOTER_CONTENT}>
+          <Button
+            style={Styles.CONTINUE}
+            textStyle={Styles.CONTINUE_TEXT}
+            text="Demo"
             tx="welcomeScreen.continue"
             onPress={nextScreen}
           />
-        </View>
+        </View> */}
       </SafeAreaView>
     </View>
   )

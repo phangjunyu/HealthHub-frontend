@@ -2,7 +2,6 @@
 //
 // In this file, we'll be kicking off our app or storybook.
 
-import "./i18n"
 import React, { useState, useEffect } from "react"
 import { YellowBox } from "react-native"
 import { StatefulNavigator, BackButtonHandler, exitRoutes } from "./navigation"
@@ -10,7 +9,7 @@ import { RootStore, RootStoreProvider, setupRootStore } from "./models/root-stor
 
 import { contains } from "ramda"
 import { enableScreens } from "react-native-screens"
-
+import "./i18n"
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
 // https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
@@ -40,7 +39,7 @@ const canExit = (routeName: string) => contains(routeName, exitRoutes)
 export default function App() {
   const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined) // prettier-ignore
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       setupRootStore().then(setRootStore)
     })()
   }, [])
