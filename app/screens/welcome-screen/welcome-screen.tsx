@@ -1,7 +1,7 @@
 import * as React from "react"
 import { View, Image, SafeAreaView, ViewStyle } from "react-native"
 import { NavigationInjectedProps } from "react-navigation"
-import { Button, Header, Screen, Text, Wallpaper } from "../../components"
+import { Button, Screen, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
 import styles from "../../theme/styles"
 // const bowserLogo = require("./bowser.png")
@@ -10,9 +10,9 @@ const healthhubLogo = require("./Healthhub.png")
 export interface WelcomeScreenProps extends NavigationInjectedProps<{}> {}
 
 export const WelcomeScreen: React.FunctionComponent<WelcomeScreenProps> = props => {
-  const nextScreen = React.useMemo(() => () => props.navigation.navigate("demo"), [
-    props.navigation,
-  ])
+  // const nextScreen = React.useMemo(() => () => props.navigation.navigate("demo"), [
+  //   props.navigation,
+  // ])
   const loadHomePage = React.useMemo(() => () => props.navigation.navigate("homepage"), [
     props.navigation,
   ])

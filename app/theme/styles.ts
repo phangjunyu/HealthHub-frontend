@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native"
 import { color, spacing } from "./"
+import { palette } from "./palette"
 
 const text = StyleSheet.create({
   NORMAL: {
     color: color.palette.black,
-    fontFamily: "Montserrat",
+    fontFamily: "Helvetica-Light",
   },
   BOLD: { fontWeight: "bold" },
 })
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
   HEADER_TITLE: {
     ...text.NORMAL,
     ...text.BOLD,
+    color: color.palette.white,
     fontSize: 12,
     lineHeight: 15,
     textAlign: "center",
@@ -80,14 +82,33 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing[4],
   },
   CardTitle: {
-    ...text.NORMAL,
-    ...text.BOLD,
-    fontSize: 20,
-    textAlign: "center",
-  },
-  ProfileCard: {
+    fontFamily: "sans-serif-light",
+    fontSize: 17,
+    color: "white",
     justifyContent: "center",
+    alignSelf: "center",
+  },
+  CardItem: {
+    height: "100%",
+    shadowRadius: 20,
+    backgroundColor: "black",
+  },
+  CardContent: {
     textAlign: "center",
+    justifyContent: "center",
+  },
+  CardIcon: {
+    fontSize: 35,
+    alignSelf: "center",
+    justifyContent: "center",
+    color: "white",
+  },
+  TabTitle: {
+    fontFamily: "sans-serif-condensed",
+    color: color.palette.white,
+    fontSize: 25,
+    textAlign: "center",
+    letterSpacing: 1.5,
   },
 })
 

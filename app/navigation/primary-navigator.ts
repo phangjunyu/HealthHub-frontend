@@ -1,11 +1,23 @@
 import { createStackNavigator } from "react-navigation-stack"
-import { WelcomeScreen, DemoScreen, HomepageScreen } from "../screens"
+import {
+  WelcomeScreen,
+  DemoScreen,
+  HomepageScreen,
+  WeightScreen,
+  DietScreen,
+  ExerciseScreen,
+  SleepScreen,
+} from "../screens"
 
 export const PrimaryNavigator = createStackNavigator(
   {
     welcome: { screen: WelcomeScreen },
     demo: { screen: DemoScreen },
     homepage: { screen: HomepageScreen },
+    diet: { screen: DietScreen },
+    exercise: { screen: ExerciseScreen },
+    sleep: { screen: SleepScreen },
+    weight: { screen: WeightScreen },
   },
   {
     headerMode: "none",
