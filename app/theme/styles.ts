@@ -110,6 +110,22 @@ const styles = StyleSheet.create({
     textAlign: "center",
     letterSpacing: 1.5,
   },
+  ListItem: {
+    paddingLeft: 20,
+    paddingVertical: 10,
+    paddingRight: 30,
+  },
+  ListWeight: {
+    ...text.NORMAL,
+    fontSize: 15,
+    textAlign: "right",
+  },
+  ListDate: {},
+  ListSeparator: {
+    height: 1,
+    width: "100%",
+    backgroundColor: "#dbdbdb",
+  },
 })
 
 export default styles
