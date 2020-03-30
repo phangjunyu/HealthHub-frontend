@@ -3,10 +3,12 @@
 # HealthHub
 
 ## Setup instructions
-### Clone the Repo
 Navigate into the folder, open command prompt and enter `npm run android` for Android development. Make sure you have an Android device connected or emulator set up. If you have an error saying: 
+
 `warn Failed to connect to development server using "adb reverse": `
+
 close the server and enter the command `npm run adb`.
+
 After that, enter the command `npm run start` to start the react-native server. You should now be able to open the app on your emulator or device and see live code changes.
 
 [![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
