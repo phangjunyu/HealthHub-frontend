@@ -99,4 +99,26 @@ export class Api {
       return { kind: "bad-data" }
     }
   }
+
+  async getDetails(id: string): Promise<Types.GetUserResult> {
+    // make the api call
+    const response: ApiResponse<any> = await this.apisauce.get(`/users/${id}`)
+
+    // the typical ways to die when calling an api
+    if (!response.ok) {
+      const problem = getGeneralApiProblem(response)
+      if (problem) return problem
+    }
+
+    // transform the data into the format we are expecting
+    try {
+      const resultUser: Types.User = {
+        id: response.data.id,
+        name: response.data.name,
+      }
+      return { kind: "ok", user: resultUser }
+    } catch {
+      return { kind: "bad-data" }
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import { GeneralApiProblem } from "./api-problem"
+import { ProfileSnapshot } from "../../models/profile"
 
 export interface User {
   id: number
@@ -7,3 +8,5 @@ export interface User {
 
 export type GetUsersResult = { kind: "ok"; users: User[] } | GeneralApiProblem
 export type GetUserResult = { kind: "ok"; user: User } | GeneralApiProblem
+
+export type GetProfileResult = { kind: "ok"; profile: ProfileSnapshot } | GeneralApiProblem
