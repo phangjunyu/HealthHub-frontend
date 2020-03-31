@@ -70,7 +70,7 @@ export const WeightScreen: React.FunctionComponent<WeightScreenProps> = observer
             ListFooterComponent={() => <View style={styles.ListSeparator} />}
             data={list_mockdata}
             renderItem={({ item }) => <Item weight={item.weight.toString()} date={item.date} />}
-            keyExtractor={item => list_mockdata.indexOf(item)}
+            keyExtractor={item => list_mockdata.indexOf(item).toString()}
           />
           <Fab
             direction="up"

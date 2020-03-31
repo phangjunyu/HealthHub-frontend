@@ -9,10 +9,16 @@ import {
   ExerciseScreen,
   SleepScreen,
   DietScreen,
+  ReminderScreen,
+  DiagnosisScreen,
+  SettingsScreen,
 } from "../screens" // eslint-disable-line @typescript-eslint/no-unused-vars
 
 export const RootNavigator = createStackNavigator(
   {
+    settingsScreen: { screen: SettingsScreen },
+    diagnosisScreen: { screen: DiagnosisScreen },
+    reminderScreen: { screen: ReminderScreen },
     primaryStack: { screen: PrimaryNavigator },
     dietScreen: { screen: DietScreen },
     sleepScreen: { screen: SleepScreen },

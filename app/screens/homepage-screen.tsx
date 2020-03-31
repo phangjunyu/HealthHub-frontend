@@ -14,13 +14,9 @@ export interface HomepageScreenProps {
 
 export const HomepageScreen: React.FunctionComponent<HomepageScreenProps> = observer(props => {
   const goBack = React.useMemo(() => () => props.navigation.goBack(null), [props.navigation])
-  const loadProfileTab = React.useMemo(
-    () => () => {
-      Alert.alert("Profile in Progress")
-      props.navigation.navigate("profile")
-    },
-    [props.navigation],
-  )
+  const loadProfileTab = React.useMemo(() => () => props.navigation.navigate("profile"), [
+    props.navigation,
+  ])
   const loadWeightTab = React.useMemo(() => () => props.navigation.navigate("weight"), [
     props.navigation,
   ])
@@ -33,27 +29,15 @@ export const HomepageScreen: React.FunctionComponent<HomepageScreenProps> = obse
   const loadDietTab = React.useMemo(() => () => props.navigation.navigate("diet"), [
     props.navigation,
   ])
-  const loadReminderTab = React.useMemo(
-    () => () => {
-      Alert.alert("Reminders in Progress")
-      props.navigation.navigate("reminder")
-    },
-    [props.navigation],
-  )
-  const loadDiagnosisTab = React.useMemo(
-    () => () => {
-      Alert.alert("Diagnosis in Progress")
-      props.navigation.navigate("diagnosis")
-    },
-    [props.navigation],
-  )
-  const loadSettingsTab = React.useMemo(
-    () => () => {
-      Alert.alert("Settings in Progress")
-      props.navigation.navigate("settings")
-    },
-    [props.navigation],
-  )
+  const loadReminderTab = React.useMemo(() => () => props.navigation.navigate("reminder"), [
+    props.navigation,
+  ])
+  const loadDiagnosisTab = React.useMemo(() => () => props.navigation.navigate("diagnosis"), [
+    props.navigation,
+  ])
+  const loadSettingsTab = React.useMemo(() => () => props.navigation.navigate("settings"), [
+    props.navigation,
+  ])
   // const { someStore } = useStores()
   return (
     <View style={styles.FULL}>

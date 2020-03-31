@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   HEADER: {
     paddingTop: spacing[3],
     paddingBottom: spacing[4] + spacing[1],
-    paddingHorizontal: 0,
+    paddingLeft: spacing[4],
   },
   HEADER_TITLE: {
     ...text.NORMAL,

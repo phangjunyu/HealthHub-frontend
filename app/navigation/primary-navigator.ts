@@ -1,23 +1,29 @@
 import { createStackNavigator } from "react-navigation-stack"
 import {
   WelcomeScreen,
-  DemoScreen,
   HomepageScreen,
+  ProfileScreen,
   WeightScreen,
   DietScreen,
   ExerciseScreen,
   SleepScreen,
+  ReminderScreen,
+  DiagnosisScreen,
+  SettingsScreen,
 } from "../screens"
 
 export const PrimaryNavigator = createStackNavigator(
   {
     welcome: { screen: WelcomeScreen },
-    demo: { screen: DemoScreen },
     homepage: { screen: HomepageScreen },
     diet: { screen: DietScreen },
     exercise: { screen: ExerciseScreen },
     sleep: { screen: SleepScreen },
     weight: { screen: WeightScreen },
+    reminder: { screen: ReminderScreen },
+    diagnosis: { screen: DiagnosisScreen },
+    settings: { screen: SettingsScreen },
+    profile: { screen: ProfileScreen },
   },
   {
     headerMode: "none",
